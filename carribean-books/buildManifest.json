@@ -1,0 +1,51 @@
+{
+  "corpus" : true,
+  "corpusParameters" : {
+    "blockSize" : 512,
+    "filename" : "F:\\data\\carribean-books\\corpus",
+    "mergerClass" : "org.lemurproject.galago.core.index.merge.CorpusMerger",
+    "readerClass" : "org.lemurproject.galago.core.index.corpus.CorpusReader",
+    "tokenizer" : {
+      "fields" : [ "mztag" , "scanner" , "collection" , "archiveid" , "name" , "title" , "creator" , "language" , "subject" , "date" , "organization" , "location" , "person"],
+      "formats" : {
+
+      }
+    },
+    "writerClass" : "org.lemurproject.galago.core.index.corpus.CorpusFolderWriter"
+  },
+  "fieldIndex" : true,
+  "fieldIndexParameters" : {
+    "nonStemmedPostings" : true,
+    "stemmedPostings" : true,
+    "stemmer" : [ "krovetz"]
+  },
+  "indexPath" : "F:\\data\\carribean-books",
+  "inputPath" : [ "F:\\books\\carribean"],
+  "nonStemmedPostings" : true,
+  "parser" : {
+    "externalParsers" : [ {
+        "class" : "ciir.proteus.parse.MBTEIBookParser",
+        "filetype" : "toktei"
+      } , {
+        "class" : "ciir.proteus.parse.MBTEIBookParser",
+        "filetype" : "xml"
+      }],
+    "ner-model" : "src\\main\\resources\\ner-classifiers\\english.all.3class.distsim.crf.ser.gz"
+  },
+  "port" : 2332,
+  "server" : true,
+  "skipDistance" : 500,
+  "skipping" : true,
+  "stemmedCounts" : false,
+  "stemmedPostings" : true,
+  "stemmer" : [ "krovetz"],
+  "stemmerClass" : {
+    "krovetz" : "org.lemurproject.galago.core.parse.stem.KrovetzStemmer"
+  },
+  "tokenizer" : {
+    "fields" : [ "mztag" , "scanner" , "collection" , "archiveid" , "name" , "title" , "creator" , "language" , "subject" , "date" , "organization" , "location" , "person"],
+    "formats" : {
+
+    }
+  }
+}
