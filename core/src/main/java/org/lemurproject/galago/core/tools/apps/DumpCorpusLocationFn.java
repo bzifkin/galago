@@ -39,7 +39,8 @@ public class DumpCorpusLocationFn extends AppFunction {
 
             for (Map.Entry<String, ArrayList<Integer>> location : locations.entrySet()) {
                 String loc = location.getKey();
-                bw.write(loc + location.getValue() + "\n");
+                //bw.write(loc + location.getValue() + "\n"); for when we need position in book
+                bw.write(loc + "\n");
 
             }
             bw.flush();
