@@ -34,13 +34,13 @@ public class DumpCorpusLocationFn extends AppFunction {
 
     public void writeLocationToFile(String name, HashMap<String, ArrayList<Integer>> locations) throws IOException {
         try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter
-                (new FileOutputStream("/home/bzifkin/IdeaProjects/lemur-galago/location-files/" + name + "-locations.txt/")))){
+                (new FileOutputStream("/home/bzifkin/IdeaProjects/lemur-galago/location-files/indices/" + name + "-locations-indices.txt/")))){
 
 
             for (Map.Entry<String, ArrayList<Integer>> location : locations.entrySet()) {
                 String loc = location.getKey();
-                //bw.write(loc + location.getValue() + "\n"); for when we need position in book
-                bw.write(loc + "\n");
+                bw.write(loc + "\t" + location.getValue().size()  + "\n"); //for when we need position in book
+                //bw.write(loc + "\n");
 
             }
             bw.flush();
